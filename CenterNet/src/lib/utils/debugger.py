@@ -213,11 +213,12 @@ class Debugger(object):
                                        points[i][j][1] * self.down_ratio),
                    3, (int(c[0]), int(c[1]), int(c[2])), -1)
 
-  def show_all_imgs(self, out_video, pause=False, time=0):
+  def show_all_imgs(self, pause=False, time=0):
     if not self.ipynb:
-      for i, v in self.imgs.items():
+      return 0
+      # for i, v in self.imgs.items():
         # cv2.imwrite('/home/vietthangtik15/dataset/{}.jpg'.format(str(v[0][0])), v)
-        out_video.write(v)
+        # out_video.write(v)
         # if cv2.waitKey(0 if pause else 1) == 27:
         #   import sys
         #   sys.exit(0)

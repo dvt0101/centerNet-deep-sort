@@ -34,7 +34,7 @@ def demo(opt):
           # img = cv2.flip(img, 0)
           num_frame += 1
           # out_video.write(img)
-          ret = detector.run(img, out_video)
+          ret = detector.run(img)
           
           time_str = ''
           for stat in time_stats:

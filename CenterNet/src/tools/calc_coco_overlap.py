@@ -160,8 +160,8 @@ def count(split):
             x1, y1 = int(center[3][0]), int(center[3][1]), 
             x2, y2 = int(center[3][0] + center[3][2]), int(center[3][1] + center[3][3]) 
             cv2.rectangle(img, (x1, y1), (x2, y2), (0, 0, 255), 2, cv2.LINE_AA)
-            cv2.imshow('img', img)
-            cv2.waitKey()
+            # cv2.imshow('img', img)
+            # cv2.waitKey()
       centers.append(center)
   print('find {} collisions of {} objects!'.format(cnt, obj))
 
@@ -191,9 +191,9 @@ def count_iou(split):
             x1, y1 = int(bbox[0]), int(bbox[1]), 
             x2, y2 = int(bbox[2]), int(bbox[3]) 
             cv2.rectangle(img, (x1, y1), (x2, y2), (0, 0, 255), 2, cv2.LINE_AA)
-            cv2.imshow('img', img)
+            # cv2.imshow('img', img)
             print('cats', class_name[b[4]], class_name[bbox[4]])
-            cv2.waitKey()
+            # cv2.waitKey()
       bboxes.append(bbox)
   print('find {} collisions of {} objects!'.format(cnt, obj))
 
@@ -270,8 +270,8 @@ def count_anchor(split):
             x1, y1, x2, y2 = _coco_box_to_bbox(anchors[k])
             cl = (np.array([255, 0, 0]) * ious[k, t]).astype(np.int32).tolist()
             cv2.rectangle(img, (x1, y1), (x2, y2), cl, 1, cv2.LINE_AA)
-      cv2.imshow('img', img)
-      cv2.waitKey()
+      # cv2.imshow('img', img)
+      # cv2.waitKey()
     miss = 0
     if len(ious) > 0:
       miss = (ious.max(axis=0) < 0.5).sum()

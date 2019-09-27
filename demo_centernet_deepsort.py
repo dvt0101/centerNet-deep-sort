@@ -5,7 +5,7 @@ import numpy as np
 
 #CenterNet
 import sys
-CENTERNET_PATH = '/home/asoft/centerNet-deep-sort/CenterNet/src/lib/'
+CENTERNET_PATH = '/home/run/thang/centerNet-deep-sort/CenterNet/src/lib/'
 sys.path.insert(0, CENTERNET_PATH)
 from detectors.detector_factory import detector_factory
 from opts import opts
@@ -31,7 +31,7 @@ opt.input_type = 'vid'   # for video, 'vid',  for webcam, 'webcam', for ip camer
 
 #------------------------------
 # for video
-opt.vid_path = 'MOT16-11.mp4'  #
+opt.vid_path = '/home/run/thang/data/videos/bookstore.mp4'  #
 #------------------------------
 # for webcam  (webcam device index is required)
 opt.webcam_ind = 0
@@ -41,7 +41,8 @@ opt.ipcam_url = 'rtsp://{0}:{1}@IPAddress:554/cam/realmonitor?channel={2}&subtyp
 # ipcamera camera number
 opt.ipcam_no = 8
 #------------------------------
-
+# fourcc = cv2.VideoWriter_fourcc(*'XVID')
+# out = cv2.VideoWriter('/home/run/thang/data/videos/faces.avi',fourcc, 20.0, (1920,1080))
 
 from deep_sort import DeepSort
 from util import COLORS_10, draw_bboxes
@@ -105,7 +106,7 @@ class Detector(object):
         self.area = 0, 0, self.im_width, self.im_height
         if self.write_video:
             fourcc = cv2.VideoWriter_fourcc(*'MJPG')
-            self.output = cv2.VideoWriter("demo1.avi", fourcc, 20, (self.im_width, self.im_height))
+            self.output = cv2.VideoWriter("/home/run/thang/data/videos/bookstore.avi", fourcc, 20, (self.im_width, self.im_height))
         #return self.vdo.isOpened()
 
 
@@ -144,8 +145,8 @@ class Detector(object):
             avg_fps += fps
             print("centernet time: {}s, fps: {}, avg fps : {}".format(end - start, fps,  avg_fps/frame_no))
 
-            cv2.imshow("test", ori_im)
-            cv2.waitKey(1)
+            # cv2.imshow("test", ori_im)
+            # cv2.waitKey(1)
 
             if self.write_video:
                 self.output.write(ori_im)
@@ -158,8 +159,8 @@ if __name__ == "__main__":
     # if len(sys.argv) == 1:
     #     print("Usage: python demo_yolo3_deepsort.py [YOUR_VIDEO_PATH]")
     # else:
-    cv2.namedWindow("test", cv2.WINDOW_NORMAL)
-    cv2.resizeWindow("test", 800, 600)
+    # cv2.namedWindow("test", cv2.WINDOW_NORMAL)
+    # cv2.resizeWindow("test", 800, 600)
 
     #opt = opts().init()
     det = Detector(opt)

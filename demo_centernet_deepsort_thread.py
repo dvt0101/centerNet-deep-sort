@@ -148,14 +148,14 @@ class Detector(object):
             avg_fps += fps
             print("centernet time: {}s, fps: {}, avg fps : {}".format(end - start, fps,  avg_fps/frame_no))
 
-            cv2.imshow("test", ori_im)
-            cv2.waitKey(1)
+            # cv2.imshow("test", ori_im)
+            # cv2.waitKey(1)
 
             if self.write_video:
                 self.output.write(ori_im)
 
         # do a bit of cleanup
-        cv2.destroyAllWindows()
+        # cv2.destroyAllWindows()
         self.vdo.stop()
 
 if __name__ == "__main__":

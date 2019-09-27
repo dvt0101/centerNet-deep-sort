@@ -139,9 +139,9 @@ for SPLIT in SPLITS:
           pt_3d[1] += dim[0] / 2
           print('pt_3d', pt_3d)
           print('location', location)
-      if DEBUG:
-        cv2.imshow('image', image)
-        cv2.waitKey()
+      # if DEBUG:
+      #   cv2.imshow('image', image)
+      #   cv2.waitKey()
 
 
     print("# images: ", len(ret['images']))
