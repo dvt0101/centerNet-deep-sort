@@ -95,6 +95,7 @@ class Net(nn.Module):
         return x
 
 
+
 if __name__ == '__main__':
     net = Net()
     x = torch.randn(4,3,128,64)
