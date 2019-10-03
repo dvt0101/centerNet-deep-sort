@@ -76,7 +76,7 @@ class Detector(object):
 
         #centerNet detector
         self.detector = detector_factory[opt.task](opt)
-        self.deepsort = DeepSort("deep/checkpoint/ckpt.t7")
+        self.deepsort = DeepSort("deep/checkpoint/checkpoint.pth")
 
 
         self.write_video = True
