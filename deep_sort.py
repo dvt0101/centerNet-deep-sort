@@ -90,6 +90,7 @@ class DeepSort(object):
             features = np.stack(features, axis=0)
         else:
             features = np.array([])
+        print('features shape', features.shape)
         return features
 
 if __name__ == '__main__':
