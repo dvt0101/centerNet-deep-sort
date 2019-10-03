@@ -39,9 +39,9 @@ import torch
 from torchvision.transforms import *
 import numpy as np
 import cv2
-from torchtools import load_pretrained_weights
+from deep.torchtools import load_pretrained_weights
 # from .model import Net
-from patchnet import patchnet
+from deep.patchnet import patchnet
 from PIL import Image
 
 MEAN = [0.485, 0.456, 0.406]

@@ -86,6 +86,7 @@ class Detector(object):
         if opt.input_type == 'webcam':
             self.vdo.open(opt.webcam_ind)
 
+
         elif opt.input_type == 'ipcam':
             # load cam key, secret
             with open("cam_secret.txt") as f:

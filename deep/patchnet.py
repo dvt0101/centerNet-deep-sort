@@ -4,7 +4,7 @@ CVPR 2019
 https://kovenyu.com/papers/2019_CVPR_PEDAL.pdf
 https://github.com/QizeYang/PAUL/
 """
-from resnet import resnet50_laststride1
+from deep.resnet import resnet50_laststride1
 import torch.nn as nn
 import torch.nn.functional as F
 import torch
